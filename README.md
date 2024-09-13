@@ -1,12 +1,17 @@
 # Linux_hoyogames
 This is a tutorial that show you how to install and play hoyogames on linux with proton-ge-custom(https://github.com/GloriousEggroll/proton-ge-custom) but without steam...
+
 # Why without steam?
 You can actually use steam to play non-steam games, but someones may not want to launch a game with a steam client on background.
+
 # How is the 3rd party launchers?
 Most of them are only for Windows, because they use the Windows UI, and it is not able to run those launchers through wine.
+
 # How about the an anime game launcher?
 Of course you can, this tool is very simple to use.
+
 But if you want to play hoyogames at the first time when the games are updated, and don't want to wait the 3rd party launcher team to update their tools, then you can manage the launcher and games by yourself.
+
 This is why I wrote this.
 
 # Here is how I manage my launcher and games:
@@ -28,6 +33,7 @@ Notice: If you added some 3rd party repos, such as archlinuxcn or chaotic-aur, y
 
 # Run the hoyoplay launcher that downloaded from the official site
 You can download the official launcher from: https://launcher.mihoyo.com/ for CN server players; https://hoyoplay.hoyoverse.com/ for Global server players.
+
 Run the launcher with the way as you like, if you have file manager like dolphin, that you can just run the launcher with mouse click, and also you can run it in command line:
 ```
 wine 'path/to/launcher.exe'
@@ -52,11 +58,17 @@ Also you can use other tools to make the game run better.
 WINEPREFIX=/home/ice/.wine MANGOHUD=1 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine ~/git/jadeite/ys_unlock.bat
 ```
 MANGOHUD=1 (https://github.com/flightlessmango/MangoHud)
+
 ENABLE_VKBASALT=1 (https://github.com/DadSchoorse/vkBasalt)
+
 DXVK_FILTER_DEVICE_NAME= (https://github.com/doitsujin/dxvk?tab=readme-ov-file#device-filter)
+
 https_proxy= http_proxy= (Proxy may make the game not able to login in CN server, so just disable the proxy. But may not work when using a TUN mode.)
+
 /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine (using proton-ge-custom wine instead of the system wine)
+
 ~/git/jadeite/ys_unlock.bat (my customized bat file, that can unlock fps in Genshin)
+
 ```
 Z:
 cd "Z:\home\ice\GAME\Genshin Impact\Genshin Impact Game\"
