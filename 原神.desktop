@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment[zh_CN]=原神（WINE）
+Comment=原神（WINE）
+Exec=env  WINEPREFIX=/home/ice/.wine MANGOHUD=1  ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine /home/ice/git/jadeite/ys_unlock.bat
+GenericName[zh_CN]=原神（WINE）
+GenericName=原神（WINE）
+Icon=9216_launcher.0
+MimeType=
+Name[zh_CN]=原神（WINE）
+Name=原神（WINE）
+Path=
+StartupNotify=true
+StartupWMClass=launcher.exe
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
