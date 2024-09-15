@@ -1,3 +1,107 @@
+# 关于本文
+本文旨在展示如何在linux上以proton-ge-custom(https://github.com/GloriousEggroll/proton-ge-custom)启动米哈游旗下的游戏，而无需借助Steam或Lutris或AAGL等工具，只依靠系统上安装的的wine或proton-ge-custom来对游戏进行管理（安装/卸载/更新）和游玩。
+
+# 为何要这样？
+启动额外的工具，会额外占用一些资源（硬件加速会占用显存、应用本身会占用高内存），而且也会多一些操作，直接一个desktop文件一键启动岂不美哉？
+
+# 为什么不用第三方启动器？
+大多数第三方启动器都无法通过wine打开，因为它们使用了WIN UI。
+
+# AAGL怎么样？
+当然这是一个很好的工具，它非常便于使用，且集成了不少功能。但值得一提的是，越是面向初级者的工具，越是难以面面俱到。比如当游戏更新时，你必须等待这些工具的制作组去更新启动器后才能进行游玩，而通常预下载功能也很难被照顾到。因此如果你是个急急国王，我推荐你使用官方的启动器来对游戏资源进行管理。
+
+### 以下是我如何在我的电脑上管理米哈游的游戏的：###
+
+# 首先在你的发行版上安装wine及一些必要组件
+```
+pacman -S wine wine-gecko wine-mono
+```
+
+# 至少运行一次wine，确认它创建了wine前缀
+```
+winecfg
+```
+我强烈建议安装并使用proton-ge-custom运行游戏，这可以省去你为系统wine前缀安装dxvk等一系列补丁的工夫
+```
+paru -S proton-ge-custom-bin
+```
+注意：你可任意使用第三方仓库（比如archlinuxcn、chaotic-aur等）中的预编译版本，来节省时间。
+
+# 从官网下载启动器并安装
+中国大陆服： https://launcher.mihoyo.com/ ； 国际服： https://hoyoplay.hoyoverse.com/
+
+以你喜欢的方式运行启动器安装文件，如果你有dolphin之类的文件管理器，你可以直接右键选择Wine Windows Program Loader运行，当然你也可以通过命令行运行
+```
+wine 'path/to/launcher.exe'
+```
+在安装时，可以使用默认路径
+启动器的默认路径是：
+```
+~/.wine/drive_c/Program Files/miHoYo Launcher/
+```
+然后，你可以安装你喜欢的游戏
+游戏的默认路径是：
+```
+~/.wine/drive_c/Program Files/miHoYo Launcher/games/
+```
+
+# 使用proton-ge-custom代替wine来启动游戏
+```
+WINEPREFIX=/home/ice/.wine /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine 'path/to/game.exe'
+```
+你也可以搭配一些其他工具使游戏运行得更加符合你的预期
+```
+WINEPREFIX=/home/ice/.wine MANGOHUD=1 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine ~/git/jadeite/ys_unlock.bat
+```
+下面是命令/参数的一些解释
+
+MANGOHUD=1 (https://github.com/flightlessmango/MangoHud)
+
+ENABLE_VKBASALT=1 (https://github.com/DadSchoorse/vkBasalt)
+
+DXVK_FILTER_DEVICE_NAME= (https://github.com/doitsujin/dxvk?tab=readme-ov-file#device-filter)
+
+https_proxy= http_proxy= (Proxy may make the game not able to login in CN server, so just disable the proxy. But may not work when using a TUN mode.)
+
+/usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine (using proton-ge-custom wine instead of the system wine)
+
+~/git/jadeite/ys_unlock.bat (my customized bat file, that can unlock fps in Genshin)
+
+```
+Z:
+cd "Z:\home\ice\GAME\Genshin Impact\Genshin Impact Game\"
+start YuanShen.exe %*
+cd "Z:\home\ice\git\jadeite\"
+start fpsunlock.exe 120 500
+```
+当你确认能通过命令行以你满意的方式运行游戏后，你可以创建一个desktop文件（例如原神.desktop），如此你就可以一键启动原神（以及其他游戏啦）
+```
+[Desktop Entry]
+Comment[zh_CN]=Genshin（proton-ge-custom）
+Comment=Genshin（proton-ge-custom）
+Exec=env WINEPREFIX=/home/ice/.wine MANGOHUD=1 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine /home/ice/git/jadeite/ys_unlock.bat
+GenericName[zh_CN]=Genshin（proton-ge-custom）
+GenericName=Genshin（proton-ge-custom）
+Icon='path/to/icon'
+MimeType=
+Name[zh_CN]=Genshin（proton-ge-custom）
+Name=Genshin（proton-ge-custom）
+Path=
+StartupNotify=true
+StartupWMClass=launcher.exe
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+```
+
+### 最后，我也放了一些desktop文件的示例与各种logo文件，希望你游戏愉快 ###
+
+
+
+-------------------------------------------------ENGLISH VERSION-------------------------------------------------
+
 # Linux_hoyogames
 This is a tutorial that show you how to install and play hoyogames on linux with proton-ge-custom(https://github.com/GloriousEggroll/proton-ge-custom) but without steam...
 
