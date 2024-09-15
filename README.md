@@ -1,5 +1,5 @@
 # 关于本文
-本文旨在展示如何在linux上以proton-ge-custom(https://github.com/GloriousEggroll/proton-ge-custom) 启动米哈游旗下的游戏，而无需借助Steam或Lutris或AAGL等工具，只依靠系统上安装的的wine或proton-ge-custom来对游戏进行管理（安装/卸载/更新）和游玩。
+本文旨在展示如何在linux上以proton-ge-custom ( https://github.com/GloriousEggroll/proton-ge-custom ) 启动米哈游旗下的游戏，而无需借助Steam或Lutris或AAGL等工具，只依靠系统上安装的的wine或proton-ge-custom来对游戏进行管理（安装/卸载/更新）和游玩。
 
 # 为何要这样？
 启动额外的工具，会额外占用一些资源（硬件加速会占用显存、应用本身会占用高内存），而且也会多一些操作，直接一个desktop文件一键启动岂不美哉？
