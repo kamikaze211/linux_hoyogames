@@ -65,7 +65,7 @@ https_proxy= http_proxy= ( 使用代理可能会使游戏阻止你登录，因�
 
 /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine (使用proton-ge-custom的wine程序代替系统的wine程序来运行游戏)
 
-~/git/jadeite/ys_unlock.bat (my customized bat file, that can unlock fps in Genshin)
+~/git/jadeite/ys_unlock.bat (自定义bat脚本，以实现运行游戏后自动运行帧数解锁补丁：https://codeberg.org/mkrsym1/fpsunlock/releases)
 
 ```
 Z:
@@ -96,7 +96,37 @@ X-KDE-SubstituteUID=false
 X-KDE-Username=
 ```
 
+# 按需更改/etc/hosts
+```
+# 中国大陆服需屏蔽以下域名以在linux上运行，否则运行即报错
+0.0.0.0 dispatchcnglobal.yuanshen.com
+0.0.0.0 globaldp-prod-cn01.juequling.com
+
+#中国大陆服与国际服可选屏蔽域名，减少用户数据被分析的可能
+0.0.0.0 osuspider.yuanshen.com
+0.0.0.0 overseauspider.yuanshen.com
+0.0.0.0 uspider.yuanshen.com
+0.0.0.0 ys-log-upload.mihoyo.com
+0.0.0.0 ys-log-upload-os.hoyoverse.com
+```
+
+# 中国大陆服游玩原神时，可能会出现xxxxx-4001弹窗，一般重新进入大世界即可解决，但严重情况下可能会一直重复弹窗，可通过进入大世界后断网/暂停游戏进程解决。下面是一个自动化脚本实例，可将脚本文件绑定至快捷键，以快速暂停游戏进程并在一定时间后恢复
+```
+#!/bin/bash
+kill -STOP $(pgrep YuanShen.exe)
+#可自定义暂停游戏进程的时间，如果执行了依然弹窗可以尝试调高
+sleep 90
+kill -CONT $(pgrep YuanShen.exe)
+```
+也可通过添加云游戏参数以绕开检测，但游戏UI会变为手机。刚需连接手柄，此时鼠标可模拟点击屏幕操作，在设置中将设备切换为手柄，如需使用键盘，则需要在切换至手柄后再切换为键盘
+```
+# ys_unlock.bat后的use_mobile_platform -platform_type CLOUD_THIRD_PARTY_MOBILE -is_cloud 1即为云游戏参数
+WINEPREFIX=/home/ice/.wine /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine /home/ice/git/jadeite/ys_unlock.bat use_mobile_platform -platform_type CLOUD_THIRD_PARTY_MOBILE -is_cloud 1
+```
+
 ### 最后，我也放了一些desktop文件的示例与各种logo文件，希望你游戏愉快
+
+
 
 
 
