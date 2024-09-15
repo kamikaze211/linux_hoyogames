@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[zh_CN]=绝区零（WINE）
 Comment=绝区零（WINE）
-Exec=env WINEPREFIX=/home/ice/.wine MANGOHUD=1 DXVK_HUD=fps,frametimes,gpuload,memory,compiler,opacity=0.5 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= /usr/bin/gamemoderun /usr/bin/wine64 '/home/ice/.wine/drive_c/Program Files/miHoYo Launcher/games/ZenlessZoneZero Game/ZenlessZoneZero.exe'
+Exec=env WINEPREFIX=/home/ice/.wine MANGOHUD=1 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine '/home/ice/.wine/drive_c/Program Files/miHoYo Launcher/games/ZenlessZoneZero Game/ZenlessZoneZero.exe'
 GenericName[zh_CN]=绝区零（WINE）
 GenericName=绝区零（WINE）
 Icon=4D73_ZenlessZoneZero.0
