@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[zh_CN]=
 Comment=
-Exec=env WINEPREFIX=/home/ice/.wine MANGOHUD=1 DXVK_HUD=fps,frametimes,gpuload,memory,compiler,opacity=0.5 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= wine 'C:\\Program Files\\miHoYo Launcher\\launcher.exe'
+Exec=env WINEPREFIX=/home/ice/.wine wine 'C:\\Program Files\\miHoYo Launcher\\launcher.exe'
 GenericName[zh_CN]=
 GenericName=
 Icon=B10C_launcher.0
