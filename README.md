@@ -10,7 +10,7 @@
 # AAGL怎么样？
 当然这是一个很好的工具，它非常便于使用，且集成了不少功能。但值得一提的是，越是面向初级者的工具，越是难以面面俱到。比如当游戏更新时，你必须等待这些工具的制作组去更新启动器后才能进行游玩，而通常预下载功能也很难被照顾到。因此如果你是个急急国王，我推荐你使用官方的启动器来对游戏资源进行管理。
 
-### 以下是我如何在我的电脑上管理米哈游的游戏的：###
+### 以下是我如何在我的电脑上管理米哈游的游戏的
 
 # 首先在你的发行版上安装wine及一些必要组件
 ```
@@ -96,7 +96,7 @@ X-KDE-SubstituteUID=false
 X-KDE-Username=
 ```
 
-### 最后，我也放了一些desktop文件的示例与各种logo文件，希望你游戏愉快 ###
+### 最后，我也放了一些desktop文件的示例与各种logo文件，希望你游戏愉快
 
 
 
@@ -202,4 +202,4 @@ X-KDE-SubstituteUID=false
 X-KDE-Username=
 ```
 
-# I also uploaded the icons and desktop files, you can edit them as you need.
+### I also uploaded the icons and desktop files, you can edit them as you need.
