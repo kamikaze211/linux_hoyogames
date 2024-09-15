@@ -2,7 +2,7 @@
 Categories=Game
 Comment[zh_CN]=崩坏：星穹铁道（WINE）
 Comment=崩坏：星穹铁道（WINE）
-Exec=env WINEPREFIX=/home/ice/.wine MANGOHUD=1 DXVK_HUD=fps,frametimes,gpuload,memory,compiler,opacity=0.5 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= /usr/bin/gamemoderun /usr/bin/wine64 /home/ice/git/jadeite/jadeite.exe 'Z:\\home\\ice\\GAME\\Star Rail\\Game\\StarRail.exe'
+Exec=env WINEPREFIX=/home/ice/.wine MANGOHUD=1 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD /usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine /home/ice/git/jadeite/jadeite.exe 'Z:\\home\\ice\\GAME\\Star Rail\\Game\\StarRail.exe'
 GenericName[zh_CN]=崩坏：星穹铁道（WINE）
 GenericName=崩坏：星穹铁道（WINE）
 Icon=/home/ice/Pictures/星穹铁道/hsr.png
