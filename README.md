@@ -61,9 +61,9 @@ ENABLE_VKBASALT=1 (https://github.com/DadSchoorse/vkBasalt)
 
 DXVK_FILTER_DEVICE_NAME= (https://github.com/doitsujin/dxvk?tab=readme-ov-file#device-filter)
 
-https_proxy= http_proxy= (Proxy may make the game not able to login in CN server, so just disable the proxy. But may not work when using a TUN mode.)
+https_proxy= http_proxy= ( 使用代理可能会使游戏阻止你登录，因此需要关闭代理，但合理配置代理规则就可以避免这样)
 
-/usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine (using proton-ge-custom wine instead of the system wine)
+/usr/bin/gamemoderun /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine (使用proton-ge-custom的wine程序代替系统的wine程序来运行游戏)
 
 ~/git/jadeite/ys_unlock.bat (my customized bat file, that can unlock fps in Genshin)
 
