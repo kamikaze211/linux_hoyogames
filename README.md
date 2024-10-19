@@ -119,7 +119,7 @@ kill -STOP $(pgrep YuanShen.exe)
 sleep 90
 kill -CONT $(pgrep YuanShen.exe)
 ```
-也可通过添加云游戏参数以绕开检测，但游戏UI会变为手机。刚需连接手柄，此时鼠标可模拟点击屏幕操作，在设置中将设备切换为手柄，如需使用键盘，则需要在切换至手柄后再切换为键盘
+也可通过添加云游戏参数以绕开检测
 ```
 # ys_unlock.bat后的-platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1即为云游戏参数
 WINEPREFIX=/home/ice/.wine /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine /home/ice/git/jadeite/ys_unlock.bat -platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1
