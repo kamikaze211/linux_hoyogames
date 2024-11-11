@@ -1,5 +1,5 @@
 # 关于本文
-本文旨在展示如何在linux上以proton-ge-custom ( https://github.com/GloriousEggroll/proton-ge-custom ) 启动米哈游旗下的游戏，而无需借助Steam或Lutris或AAGL等工具，只依靠系统上安装的的wine或proton-ge-custom来对游戏进行管理（安装/卸载/更新）和游玩
+本文旨在展示如何在linux上以proton-ge-custom ( https://github.com/GloriousEggroll/proton-ge-custom ) 启动米哈游旗下的游戏，而无需借助Steam或Lutris或AAGL等工具，只依靠系统上安装的的wine或proton-ge-custom来对游戏进行管理（安装/卸载/更新）和游玩；此外还收集了一些在linux平台游玩米家游戏时的常见问题与其解决方案
 
 # 为何要这样？
 启动额外的工具，会额外占用一些资源（硬件加速会占用显存、应用本身会占用高内存），而且也会多一些操作，直接一个desktop文件一键启动岂不美哉？
@@ -7,7 +7,7 @@
 # 为什么不用第三方启动器？
 大多数第三方启动器都无法通过wine打开，因为它们使用了WIN UI
 
-# AAGL怎么样？
+# AAGL怎么样？nmcli n off ; MANGOHUD=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= %command% -platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1 & sleep 10 ; nmcli n on
 当然这是一个很好的工具，它非常便于使用，且集成了不少功能。但值得一提的是，越是面向初级者的工具，越是难以面面俱到。比如当游戏更新时，你必须等待这些工具的制作组去更新启动器后才能进行游玩，而通常预下载功能也很难被照顾到。因此如果你是个急急国王，我推荐你使用官方的启动器来对游戏资源进行管理。
 
 ### 以下是我如何在我的电脑上管理米哈游的游戏的
@@ -119,11 +119,18 @@ kill -STOP $(pgrep YuanShen.exe)
 sleep 90
 kill -CONT $(pgrep YuanShen.exe)
 ```
-也可通过添加云游戏参数以绕开检测
+但更推荐添加云游戏参数以绕开检测
 ```
 # ys_unlock.bat后的-platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1即为云游戏参数
 WINEPREFIX=/home/ice/.wine /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine /home/ice/git/jadeite/ys_unlock.bat -platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1
 ```
+
+# 米家游戏载入时花费时间过长，CPU占用率高导致部分场景帧数低、卡顿
+这两个问题似乎有一些相关性，前者可通过winecfg，在显示设置中打开虚拟桌面以解决；后者可以在启动游戏时断网，然后等待数秒钟再联网，这也许有助于跳过某些奇怪的联网检查脚本，从而降低cpu使用率
+```
+nmcli n off ; 游戏命令参数 & sleep 10 ; nmcli n on
+```
+需要安装nmcli，这条命令的意思是，关闭网络，运行游戏，十秒钟后，打开网络
 
 ### 最后，我也放了一些desktop文件的示例与各种logo文件，希望你游戏愉快
 
