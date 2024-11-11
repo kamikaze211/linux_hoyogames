@@ -7,7 +7,7 @@
 # 为什么不用第三方启动器？
 大多数第三方启动器都无法通过wine打开，因为它们使用了WIN UI
 
-# AAGL怎么样？nmcli n off ; MANGOHUD=1 DXVK_FILTER_DEVICE_NAME=AMD https_proxy= http_proxy= %command% -platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1 & sleep 10 ; nmcli n on
+# AAGL怎么样？
 当然这是一个很好的工具，它非常便于使用，且集成了不少功能。但值得一提的是，越是面向初级者的工具，越是难以面面俱到。比如当游戏更新时，你必须等待这些工具的制作组去更新启动器后才能进行游玩，而通常预下载功能也很难被照顾到。因此如果你是个急急国王，我推荐你使用官方的启动器来对游戏资源进行管理。
 
 ### 以下是我如何在我的电脑上管理米哈游的游戏的
