@@ -1,8 +1,8 @@
 # 关于本文
-本文旨在展示如何在linux上以proton-ge-custom ( https://github.com/GloriousEggroll/proton-ge-custom ) 启动米哈游旗下的游戏，而无需借助Steam或Lutris或AAGL等工具，只依靠系统上安装的的wine或proton-ge-custom来对游戏进行管理（安装/卸载/更新）和游玩；此外还收集了一些在linux平台游玩米家游戏时的常见问题与其解决方案
+本文旨在展示如何在linux上以wine或proton-ge-custom启动米哈游旗下的游戏，而无需借助Steam或Lutris或AAGL等工具，只依靠系统上安装的的wine或proton-ge-custom来对游戏进行管理（安装/卸载/更新）和游玩；此外还收集了一些在linux平台游玩米家游戏时的常见问题与其解决方案
 
 # 为何要这样？
-启动额外的工具，会额外占用一些资源（硬件加速会占用显存、应用本身会占用高内存），而且也会多一些操作，直接一个desktop文件一键启动岂不美哉？
+启动额外的工具，会额外占用一些资源（硬件加速会占用显存、应用本身会占用高内存），而且也会多一些操作，直接一个bash脚本或者desktop文件一键启动岂不美哉？
 
 # 为什么不用第三方启动器？
 大多数第三方启动器都无法通过wine打开，因为它们使用了WIN UI
@@ -21,11 +21,25 @@ pacman -S wine wine-gecko wine-mono
 ```
 winecfg
 ```
-我强烈建议安装并使用proton-ge-custom运行游戏，这可以省去你为系统wine前缀安装dxvk等一系列补丁的工夫
+我建议安装并使用proton-ge-custom运行游戏，这可以省去你为系统wine前缀安装dxvk等一系列补丁的工夫
 ```
 paru -S proton-ge-custom-bin
 ```
 注意：你可任意使用第三方仓库（比如archlinuxcn、chaotic-aur等）中的预编译版本，来节省时间
+如果不想用proton游玩，需要在wine前缀中加入dxvk
+```
+paru -S dxvk-bin
+setup_dxvk install
+winecfg
+```
+注意：如果使用wine游玩，则有很大可能会遇到全屏wine程序切换窗口后无法获取焦点的问题
+将下面代码复制保存为reg文件，并在wine regedit中导入可解决：
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Wine\X11 Driver]
+"UseTakeFocus"="N"
+```
 
 # 从官网下载启动器并安装
 中国大陆服： https://launcher.mihoyo.com/ ； 国际服： https://hoyoplay.hoyoverse.com/
@@ -44,6 +58,7 @@ wine 'path/to/launcher.exe'
 ```
 ~/.wine/drive_c/Program Files/miHoYo Launcher/games/
 ```
+注意：使用wine运行米哈游启动器，可能出现窗口顶部按钮不可见的问题，可以通过【winecfg>显示>取消“允许窗口管理器装饰窗口”的对话框】以解决；并且在这里你可以设置wine程序的dpi，比如从默认的96提升至144之类的，这可以使窗口化的wine程序符合现代hidpi显示器的显示方式。
 
 # 使用proton-ge-custom代替wine来启动游戏
 ```
@@ -74,7 +89,19 @@ start YuanShen.exe %*
 cd "Z:\home\ice\git\jadeite\"
 start fpsunlock.exe 120 500
 ```
-当你确认能通过命令行以你满意的方式运行游戏后，你可以创建一个desktop文件（例如原神.desktop），如此你就可以一键启动原神（以及其他游戏啦）
+当你确认能通过命令行以你满意的方式运行游戏后，你可以创建一个bash脚本或desktop文件，如此你就可以一键启动原神（以及其他游戏啦）
+```
+#!/bin/bash
+#genshin impact
+nmcli n off ; MANGOHUD=1 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD  https_proxy= http_proxy= /usr/bin/gamemoderun wine64 ~/git/jadeite/ys_unlock.bat -platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1 & sleep 10 ; nmcli n on
+```
+
+```
+#!/bin/bash
+#hsr
+nmcli n off ; MANGOHUD=1 ENABLE_VKBASALT=1 DXVK_FILTER_DEVICE_NAME=AMD /usr/bin/gamemoderun wine64 /home/ice/git/jadeite/jadeite.exe 'Z:\home\ice\GAME\miHoYo Launcher\games\Star Rail\Game\StarRail.exe' & sleep 10 ; nmcli n on
+```
+
 ```
 [Desktop Entry]
 Comment[zh_CN]=Genshin（proton-ge-custom）
@@ -132,7 +159,7 @@ nmcli n off ; 游戏命令参数 & sleep 10 ; nmcli n on
 ```
 需要安装nmcli，这条命令的意思是，关闭网络，运行游戏，十秒钟后，打开网络
 
-### 最后，我也放了一些desktop文件的示例与各种logo文件，希望你游戏愉快
+### 最后，我也放了一些bash脚本、desktop文件的示例与各种logo文件，希望你游戏愉快
 
 
 
