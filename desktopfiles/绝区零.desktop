@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment[zh_CN]=绝区零（WINE）
+Comment=绝区零（WINE）
+Exec=/home/ice/git/Hoyo_games_desktopfiles/scripts/umu_zzz.sh
+GenericName[zh_CN]=绝区零（WINE）
+GenericName=绝区零（WINE）
+Icon=4D73_ZenlessZoneZero.0
+MimeType=
+Name[zh_CN]=绝区零（WINE）
+Name=绝区零（WINE）
+Path=
+StartupNotify=true
+StartupWMClass=launcher.exe
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

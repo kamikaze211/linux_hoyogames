@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment[zh_CN]=
+Comment=
+Exec=env WINEPREFIX=/home/ice/.wine https_proxy= http_proxy= wine 'C:\\Program Files\\miHoYo Launcher\\launcher.exe'
+GenericName[zh_CN]=
+GenericName=
+Icon=B10C_launcher.0
+MimeType=
+Name[zh_CN]=米哈游启动器
+Name=米哈游启动器
+Path=
+StartupNotify=true
+StartupWMClass=launcher.exe
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
