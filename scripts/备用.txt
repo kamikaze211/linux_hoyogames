@@ -1,1 +1,0 @@
- -platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1
