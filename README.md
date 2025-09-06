@@ -31,26 +31,26 @@ A：AAGL很好，但仍需要用户有一些灵活变通的能力，才能更好
 安装proton-ge-custom-bin、dxvk-bin、umu-launcher（一个脱离steam使用proton兼容层的工具）
 
 ```
-**paru -S proton-ge-custom-bin dxvk-bin umu-launcher**
+paru -S proton-ge-custom-bin dxvk-bin umu-launcher
 ```
 proton-ge-customd已支持ntsync，如需使用，请确认内核高于6.14，且挂载ntsync模组：
 
 ```
-**mkdir /etc/modules-load.d/**
-**touch /etc/modules-load.d/ntsync.conf**
-**echo "ntsync" > /etc/modules-load.d/ntsync.conf**
+mkdir /etc/modules-load.d/
+touch /etc/modules-load.d/ntsync.conf
+echo "ntsync" > /etc/modules-load.d/ntsync.conf
 ```
 通过proton-ge-custom创建wineprefix
 
 ```
-**WINEPREFIX=/home/ice/GAME/hoyogames/xxx /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine  winecfg**
+WINEPREFIX=/home/ice/GAME/hoyogames/xxx /usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin/wine  winecfg
 ```
 可选：更改wineprefix的dpi以适应hidpi显示器，在显示选项栏中调整dpi即可，比如从96调整至144
 
 安装dxvk至wineprefix中
 
 ```
-**WINEPREFIX=/home/ice/GAME/hoyogames/xxx setup_dxvk install**
+WINEPREFIX=/home/ice/GAME/hoyogames/xxx setup_dxvk install
 ```
 
 # 鉴于米家游戏启动器可以直接通过wine安装和运行，为了更方便管理，直接使用系统的wineprefix进行游戏安装和更新
