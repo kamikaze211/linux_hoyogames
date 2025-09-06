@@ -13,15 +13,20 @@ GAME_PATH_LINUX="/home/ice/GAME/miHoYo Launcher/games/Star Rail/StarRail.exe"
 wineserver -k
 pkill -f "\.exe"
 
-# 设置环境变量并运行游戏
+# 关闭网络；disconnect the network
+#nmcli n off &
+
+# 设置环境变量并运行游戏（不断网的话需要在/etc/hosts中加入0.0.0.0 globaldp-prod-cn01.bhsr.com）
+DXVK_HUD=fps \
 MANGOHUD=1 \
-PROTON_USE_NTSYNC=1 \
 WINEPREFIX="$PREFIX" \
 GAMEID="none" \
 PROTONPATH="$PROTON" \
-ENABLE_VKBASALT=1 \
-ENABLE_LSFG=1 \
-LSFG_MULTIPLIER=2 \
-LSFG_FLOW_SCALE=1 \
-LSFG_PERF_MODE=1 \
 gamemoderun umu-run "$GAME_EXECUTABLE" "$GAME_PATH" &
+
+
+# 暂停一秒；sleep for 10 second
+#sleep 10
+
+# 恢复网络；reconnect the network
+#nmcli n on

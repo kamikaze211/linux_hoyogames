@@ -12,15 +12,20 @@ GAME_EXECUTABLE="/home/ice/GAME/miHoYo Launcher/games/ZenlessZoneZero Game/Zenle
 wineserver -k
 pkill -f "\.exe"
 
-# 设置环境变量并运行游戏（需要在/etc/hosts中加入0.0.0.0 globaldp-prod-cn01.juequling.com）
-PROTON_USE_NTSYNC=1 \
-ENABLE_LSFG=1 \
-LSFG_MULTIPLIER=2 \
-LSFG_FLOW_SCALE=1 \
-LSFG_PERF_MODE=1 \
+# 关闭网络；disconnect the network
+#nmcli n off &
+
+# 设置环境变量并运行游戏（不断网的话需要在/etc/hosts中加入0.0.0.0 globaldp-prod-cn01.juequling.com）
 DXVK_HUD=fps \
 MANGOHUD=1 \
 WINEPREFIX="$PREFIX" \
 GAMEID="none" \
 PROTONPATH="$PROTON" \
-gamemoderun umu-run "$GAME_EXECUTABLE" &
+game-performance umu-run "$GAME_EXECUTABLE" &
+
+
+# 暂停一秒；sleep for 2 second
+#sleep 5
+
+# 恢复网络；reconnect the network
+#nmcli n on

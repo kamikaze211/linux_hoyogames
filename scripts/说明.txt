@@ -1,0 +1,29 @@
+# 原神
+
+# 注意：云游戏参数会导致账号联机功能被封禁，请仅在小号上进行测试
+-platform_type CLOUD_THIRD_PARTY_PC -is_cloud 1
+
+# 重要：截至5.8版本，必须伪装为steamdeck设备，才能避免游戏过程中被无限弹窗（10310-4001）
+# 在bat文件中，向注册表注入设备信息，使wine环境下获取到的设备信息为steamdeck
+reg add HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName /v ComputerName /t REG_SZ /d STEAMDECK /f
+reg add HKLM\System\CurrentControlSet\Control\ComputerName\ComputerName /v ComputerName /t REG_SZ /d STEAMDECK /f
+
+# 重要：截至5.8版本，wine创建的prefix将导致弹窗10351-4001，可用proton-ge创建prefix临时解决
+
+# 重要：截至5.8版本，仍需要断网启动
+
+
+
+# 星穹铁道
+
+# 重要：截至3.5版本，仍需要断网启动（或者在hosts中写入0.0.0.0 globaldp-prod-cn01.bhsr.com）
+
+# 重要：截至3.5版本，仍需配合jadeite.exe启动
+
+
+
+# 绝区零
+
+# 重要：截至3.5版本，仍需要断网启动（或者在hosts中写入0.0.0.0 globaldp-prod-cn01.juequling.comm）
+
+# 注意：这2.2中修复了登录时卡顿时间过长导致提示断网的bug，此前需要通过gamemode来解决，现在已不需要，但不排除以后又会出现

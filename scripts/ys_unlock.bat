@@ -12,4 +12,4 @@ start YuanShen.exe
 
 cd "Z:\home\ice\git\Hoyo_games_desktopfiles\scripts\"
 
-start fpsunlock.exe 360 1000
+start fpsunlock.exe 180 1000
