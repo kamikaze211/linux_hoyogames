@@ -15,7 +15,11 @@ wineserver -k
 pkill -f "\.exe"
 
 # 关闭网络；disconnect the network
-nmcli n off &
+#nmcli n off &
+
+# 添加需屏蔽服务器至hosts
+sudo chmod 777 /etc/hosts
+echo "0.0.0.0 dispatchcnglobal.yuanshen.com" >> /etc/hosts
 
 # 设置环境变量并运行游戏；define the environments and run the game
 
@@ -30,4 +34,9 @@ gamemoderun umu-run "$GAME_EXECUTABLE" &
 sleep 5
 
 # 恢复网络；reconnect the network
-nmcli n on
+#nmcli n on
+
+# 修改hosts文件，保存至临时文件
+sed '/0.0.0.0 dispatchcnglobal.yuanshen.com/d' /etc/hosts > /tmp/hosts_modified
+# 用修改后的临时文件替换hosts
+cp /tmp/hosts_modified /etc/hosts
