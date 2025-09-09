@@ -33,7 +33,7 @@ A：AAGL很好，但仍需要用户有一些灵活变通的能力，才能更好
 ```
 paru -S proton-ge-custom-bin dxvk-bin umu-launcher
 ```
-proton-ge-customd已支持ntsync，如需使用，请确认内核高于6.14，且挂载ntsync模组：
+proton-ge-custom已支持ntsync，如需使用，请确认内核高于6.14，且挂载ntsync模组：
 
 ```
 mkdir /etc/modules-load.d/
