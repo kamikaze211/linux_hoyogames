@@ -24,6 +24,6 @@ reg add HKLM\System\CurrentControlSet\Control\ComputerName\ComputerName /v Compu
 
 # 绝区零
 
-# 重要：截至3.5版本，仍需要断网启动（或者在hosts中写入0.0.0.0 globaldp-prod-cn01.juequling.comm）
+# 重要：截至2.2版本，仍需要断网启动（或者在hosts中写入0.0.0.0 globaldp-prod-cn01.juequling.comm）
 
 # 注意：这2.2中修复了登录时卡顿时间过长导致提示断网的bug，此前需要通过gamemode来解决，现在已不需要，但不排除以后又会出现
