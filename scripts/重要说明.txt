@@ -1,0 +1,24 @@
+# 原神
+
+# 重要：自6.2版本起，必须通过steam客户端（或者伪造steam客户端）方式，才能进入原神。同时，不再需要、且不再应该通过断网/hosts屏蔽方式进入游戏，因为这样虽然可以绕过进入游戏时的反作弊检测，却会触发在线反作弊检测，从而导致无限弹窗，无法绕过！
+通过steam方式启动，proton版本应选用proton-ge-10-21，后续版本疑似针对原神有一些问题，无法正常进入游戏。
+目前linux上玩原神，会有随机崩溃问题，不进行其他处理的话，一般在两分钟内不闪退的话，则当次游戏不再出现闪退。
+有第三方的针对闪退的workaround，但似乎在proton上不起作用。
+请使用第三方针对原神做了特定优化的wine版本：https://github.com/NelloKudo/Wine-Builds/releases/
+以及针对闪退问题进行修复的genshin_loader：https://github.com/everything411/fpsunlock?tab=readme-ov-file#cn-server-workaround-unlocker_cn
+具体请参考脚本
+
+
+# 星穹铁道
+
+# 重要：截至3.5版本，仍需要断网启动（或者在hosts中写入0.0.0.0 globaldp-prod-cn01.bhsr.com）
+
+# 重要：截至3.5版本，仍需配合jadeite.exe启动
+
+
+
+# 绝区零
+
+# 重要：截至3.5版本，仍需要断网启动（或者在hosts中写入0.0.0.0 globaldp-prod-cn01.juequling.comm）
+
+# 注意：这2.2中修复了登录时卡顿时间过长导致提示断网的bug，此前需要通过gamemode来解决，现在已不需要，但不排除以后又会出现
